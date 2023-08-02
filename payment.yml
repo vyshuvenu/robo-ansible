@@ -5,6 +5,4 @@
     component: payment
   tasks:
     - name: Python Setup
-      ansible.builtin.import_role:
-        name: common
-        tasks_from: python
+      ansible.builtin.import_tasks: python.yml

@@ -1,10 +1,8 @@
-- name: Shipping Setup
+- name: cart Setup
   hosts: all
   become: true
   vars:
     component: cart
   tasks:
     - name: NodeJS Setup
-      ansible.builtin.import_role:
-        name: common
-        tasks_from: nodejs
+      ansible.builtin.import_tasks: nodejs.yml
