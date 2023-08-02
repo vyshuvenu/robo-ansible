@@ -1,12 +1,5 @@
-- name: copy mongoDB yum repo file
-  ansible.builtin.copy:
-    src: mongo.repo
-    dest: /etc/yum.repos.d/mongo.repo
-
-- name: install mongodb client
-  ansible.builtin.yum:
-    name: mongo-org-shell
-    state: installed
-
-- name: load schema
-  ansible.builtin.shell:  mongo --host mongodb-dev.vyshu.online </app/schema/{{component}}.js
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+gpgcheck=0
+enabled=1
