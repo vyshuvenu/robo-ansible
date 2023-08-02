@@ -1,0 +1,11 @@
+- name: Shipping Setup
+  hosts: all
+  become: true
+  vars:
+    component: user
+    schema: true
+  tasks:
+    - name: NodeJS Setup
+      ansible.builtin.import_role:
+        name: common
+        tasks_from: nodejs
